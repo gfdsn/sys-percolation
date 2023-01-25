@@ -1,8 +1,3 @@
-/* *****************************************************************************
- *  Name:              Guilherme Santos
- *  Last modified:     22/01/2023
- **************************************************************************** */
-
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
