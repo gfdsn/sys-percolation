@@ -16,7 +16,9 @@ public class PercolationStats {
 
     // perform independent trials on an n-by-n grid
     public PercolationStats(int n, int trials) {
-        if (n <= 0 || trials <= 0) throw new java.lang.IllegalArgumentException();
+        if (n <= 0 || trials <= 0) {
+            throw new IllegalArgumentException();
+        }
 
         this.gridSize = n;
         this.trials = trials;
@@ -78,10 +80,9 @@ public class PercolationStats {
         PercolationStats percolationStats = new PercolationStats(gridSize, trials);
         double elapsedTime = sw.elapsedTime();
 
-        System.out.println("elapsed time              " + elapsedTime);
-        System.out.printf("mean=                     %f%n", percolationStats.mean());
-        System.out.printf("stddev=                   %f%n", percolationStats.stddev());
-        System.out.printf("95%% confidence interval=  %f, %f%n", percolationStats.confidenceLo(),
+        System.out.printf("mean =                     %f%n", percolationStats.mean());
+        System.out.printf("stddev =                   %f%n", percolationStats.stddev());
+        System.out.printf("95%% confidence interval =  %f, %f%n", percolationStats.confidenceLo(),
                           percolationStats.confidenceHi());
 
     }

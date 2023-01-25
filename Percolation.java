@@ -23,7 +23,9 @@ public class Percolation {
     // creates n-by-n grid, with all sites initially blocked
     public Percolation(int n) {
 
-        if (n < 0) throw new java.lang.IllegalArgumentException("N should be higher than 0");
+        if (n < 0) {
+            throw new IllegalArgumentException();
+        }
 
         this.size = n;
 
@@ -68,7 +70,7 @@ public class Percolation {
     public void open(int row, int col) {
 
         if (!vaidateIndex(row, col)) {
-            throw new java.lang.IndexOutOfBoundsException();
+            throw new java.lang.IllegalArgumentException();
         }
 
         int mainSiteRow = row;
@@ -133,7 +135,7 @@ public class Percolation {
             }
         }
         else {
-            throw new java.lang.IndexOutOfBoundsException();
+            throw new java.lang.IllegalArgumentException();
         }
         return false;
     }
